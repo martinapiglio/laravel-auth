@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+
+            $table->string('project_title', 100)->unique();
+            $table->text('description');
+            $table->string('slug', 100);
+            $table->string('thumbnail')->nullable();
+            $table->date('year');
+            $table->string('github_repo');
+
             $table->timestamps();
         });
     }
