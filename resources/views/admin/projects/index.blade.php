@@ -12,9 +12,7 @@
         <table class="table">
 
             <thead>
-                <th></th>
                 <th>Title</th>
-                <th>Description</th>
                 <th>Languages</th>
                 <th>Year</th>
                 <th>Repository name</th>
@@ -25,9 +23,7 @@
           
               @foreach($projects as $project)
                 <tr>
-                    <td> <img class="img-thumbnail" src="{{$project->thumbnail}}" alt=""> </td>
                     <td>{{$project->title}}</td>
-                    <td>{{$project->description}}</td>
                     <td>{{$project->languages}}</td>
                     <td>{{$project->year}}</td>
                     <td>{{$project->github_repo}}</td>
