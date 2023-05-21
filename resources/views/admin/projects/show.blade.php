@@ -17,6 +17,7 @@
         <a href="{{route('admin.projects.edit', $project->slug)}}">Change</a>
     </div>
 
+    {{-- modal --}}
     <button type="button" class="bg-danger" data-bs-toggle="modal" data-bs-target="#deleteProject">
         Delete Comic
     </button>
@@ -48,6 +49,7 @@
             </div>
         </div>
     </div> 
+    {{-- // modal --}}
 
     <div class="mb-2">
         <a href="{{route('admin.projects.index')}}">Back</a>

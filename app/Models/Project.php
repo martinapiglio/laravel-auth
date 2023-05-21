@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    protected $fillable = ['title', 'description', 'slug', 'thumbnail', 'languages', 'github_repo'];
+    protected $fillable = ['title', 'description', 'slug', 'thumbnail', 'languages', 'year', 'github_repo'];
     protected $attributes = [
-        'year' => 'unknown'
+        'year' => 2023
     ];
     use HasFactory;
 }

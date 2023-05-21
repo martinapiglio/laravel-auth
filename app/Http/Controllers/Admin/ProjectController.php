@@ -42,6 +42,7 @@ class ProjectController extends Controller
         $this->validation($request);
         
         $formData = $request->all();
+        $formData['github_repo'] = $formData['github_repo'] . '-repo';
 
         $newProject = new Project();
         $newProject->slug = Str::slug($formData['title'], '-');
@@ -115,7 +116,7 @@ class ProjectController extends Controller
             'description' => 'required|max:255',
             'thumbnail' => 'required',
             'languages' => 'required',
-            'year' => 'nullable|min:4|max:4',
+            'year' => 'nullable|min:4|max:4|gte:2015|lte:2023',
             'github_repo' => 'required',
         ], [
             'title.required' => 'Title field is mandatory.',
@@ -125,8 +126,10 @@ class ProjectController extends Controller
             'description.max' => 'Description field cannot be longer than 255 characters.',
             'thumb.required' => "Thumbnail path is mandatory.",
             'languages.required' => "Languages field is mandatory.",
-            'year.min' => "Year must be 4 characters long",
-            'year.max' => "Year must be 4 characters long",
+            'year.min' => "Year must be 4 digits long",
+            'year.max' => "Year must be 4 digits long",
+            'year.gte' => "Year must be greater than or equal to 2015",
+            'year.lte' => "Year must be less than or equal to the current year",
             'github_repo.required' => "Github repository field is mandatory."
 
         ])->validate();

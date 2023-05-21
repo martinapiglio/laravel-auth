@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('slug', 100);
             $table->string('thumbnail')->nullable();
             $table->string('languages');
-            $table->string('year');
+            $table->smallInteger('year');
             $table->string('github_repo');
 
             $table->timestamps();
