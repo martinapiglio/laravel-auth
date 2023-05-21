@@ -27,7 +27,7 @@ Route::get('/', function () {
 // creo le rotte di per le pagine di amministrazione
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function(){
 
-    Route::get('/', [DashboardController::class, 'home']);
+    Route::get('/', [DashboardController::class, 'home'])->name('dashboard');
     Route::resource('projects', ProjectController::class)->parameters(['projects'=>'project:slug']);
 
 });
