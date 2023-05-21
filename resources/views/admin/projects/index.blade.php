@@ -31,7 +31,7 @@
                     <td>{{$project->languages}}</td>
                     <td>{{$project->year}}</td>
                     <td>{{$project->github_repo}}</td>
-                    <td><a href="#">click here</a></td>
+                    <td><a href="{{route('admin.projects.show', $project->slug)}}">click here</a></td>
                 </tr>
               @endforeach
           
