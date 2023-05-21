@@ -14,7 +14,8 @@
 <div class="content">
     <div class="container">
         <p>This is the main login page</p>
-        <a href="{{route('admin.projects.index')}}">Show all projects</a>
+        <a href="{{route('admin.projects.index')}}">Show all projects</a> <br>
+        <a href="{{route('admin.projects.create')}}">Add a new project</a>
     </div>
 </div>
 @endsection
