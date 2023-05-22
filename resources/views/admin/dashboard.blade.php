@@ -1,21 +1,27 @@
 @extends('layouts.admin')
+
 @section('content')
 
-<div class="jumbotron p-5 mb-4 bg-light rounded-3">
-    <div class="container py-5">
+    <div id="dashboard-container" class="container p-5">
         
-        <h1 class="display-5 fw-bold">
-            You are now logged in!
+        <h1 class="display-5 fw-bold mb-5">
+            Welcome to your projects portfolio, {{ Auth::user()->name }}!
         </h1>
 
-    </div>
-</div>
+        <div class="content">
 
-<div class="content">
-    <div class="container">
-        <p>This is the main login page</p>
-        <a href="{{route('admin.projects.index')}}">Show all projects</a> <br>
-        <a href="{{route('admin.projects.create')}}">Add a new project</a>
+            <p>Here you can choose what to do next:</p>
+
+            <button class="btn btn-dark">
+                <a href="{{route('admin.projects.index')}}">Show all projects</a>
+            </button>
+
+            <button class="btn btn-dark">
+                <a href="{{route('admin.projects.create')}}">Add a new project</a>
+            </button>
+            
+        </div>
+
     </div>
-</div>
+
 @endsection

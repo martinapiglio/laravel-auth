@@ -2,24 +2,30 @@
 
 @section('content')
 
-<div class="container my-5">
-    <h1>{{$project->title}}</h1>
-    <hr class="mb-2">
+<div class="container p-5">
+
+    <h3 class="display-5 fw-bold mb-5">
+        {{$project->title}}
+    </h3>
+
+    <hr class="mb-5">
+
     <p>
         <strong>Description</strong>: {{$project->description}}
     </p>
+
     <img class="img-thumbnail mb-2" src="{{$project->thumbnail}}" alt="">
     <div class="mb-2"><strong>Languages</strong>: {{$project->languages}}</div>
     <div class="mb-2"><strong>Github repository name</strong>: {{$project->github_repo}}</div>
     <div class="mb-3"><strong>Year</strong>: {{$project->year}}</div>
 
-    <div class="mb-2">
+    <button id="change-btn" class="btn text-white">
         <a href="{{route('admin.projects.edit', $project->slug)}}">Change</a>
-    </div>
+    </button>
 
     {{-- modal --}}
-    <button type="button" class="bg-danger" data-bs-toggle="modal" data-bs-target="#deleteProject">
-        Delete Comic
+    <button type="button" class="btn bg-danger text-white" data-bs-toggle="modal" data-bs-target="#deleteProject">
+        Delete Project
     </button>
 
     <div class="modal fade text-dark" id="deleteProject" tabindex="-1" aria-hidden="true">
@@ -52,7 +58,7 @@
     {{-- // modal --}}
 
     <div class="mb-2">
-        <a href="{{route('admin.projects.index')}}">Back</a>
+        <a id="back-link" href="{{route('admin.projects.index')}}">Back to all projects preview</a>
     </div>
 
 </div>

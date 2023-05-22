@@ -3,15 +3,15 @@
 
 @section('content')
 
-    <div class="container py-5">
+    <div class="container p-5">
         
         <h3 class="display-5 fw-bold mb-5">
             All projects
         </h3>
 
-        <table class="table">
+        <table id="project-table" class="table table-striped">
 
-            <thead>
+            <thead class="text-white">
                 <th>Title</th>
                 <th>Languages</th>
                 <th>Year</th>

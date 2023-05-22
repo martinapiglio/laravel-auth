@@ -3,7 +3,11 @@
 
 @section('content')
 
-    <div class="container py-5">
+    <div class="container p-5">
+
+        <h3 class="display-5 fw-bold mb-5">
+            Add a new project
+        </h3>
         
         <form action=" {{ route('admin.projects.store') }} " method="POST">
             @csrf 
@@ -74,9 +78,12 @@
                 @enderror
             </div>
   
-              <button type="submit">add</button>
+            <button class="btn text-white buttons" type="submit">Add</button>
         </form>
 
+        <div class="mb-2">
+            <a id="back-link" href="{{route('admin.projects.index')}}">Show all projects</a>
+        </div>
 
     </div>
 

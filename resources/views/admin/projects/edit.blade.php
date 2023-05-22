@@ -3,7 +3,11 @@
 
 @section('content')
 
-    <div class="container py-5">
+    <div class="container p-5">
+
+        <h3 class="display-5 fw-bold mb-5">
+            Change the selected project
+        </h3>
         
         <form action=" {{ route('admin.projects.update',  $project->slug) }} " method="POST">
             @csrf 
@@ -74,10 +78,14 @@
                     </div>
                 @enderror
             </div>
+
+            <button class="btn text-white buttons" type="submit">Change</button>
   
-              <button type="submit">change</button>
-          </form>
-  
+        </form>
+
+        <div class="mb-2">
+            <a id="back-link" href="{{route('admin.projects.show', $project->slug)}}">Back to project details</a>
+        </div>
 
     </div>
 
